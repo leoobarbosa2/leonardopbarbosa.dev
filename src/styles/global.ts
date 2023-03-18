@@ -6,11 +6,14 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
-
+    
+    img {
+        max-width: 100%;
+    }
 
     body {
-        background: ${({ theme }) => theme['gray-500']};
-        color: ${({ theme }) => theme['gray-300']};
+        background: ${({ theme }) => theme.colors["gray-light"]};
+        color: ${({ theme }) => theme.colors["text-dark"]};
         -webkit-font-smoothing: antialiased;
     }
     
