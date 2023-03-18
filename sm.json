@@ -1,6 +1,6 @@
 {
   "apiEndpoint": "https://personal-bog.prismic.io/api/v2",
-  "libraries": ["@/slices"],
-  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
+  "libraries": ["@/.slicemachine"],
+  "localSliceSimulatorURL": "http://localhost:9999/slice-simulator",
   "_latest": "0.7.1"
 }

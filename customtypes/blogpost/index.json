@@ -12,40 +12,38 @@
           "placeholder": ""
         }
       },
-      "publisheddate": {
+      "publishedDate": {
         "type": "Date",
         "config": {
-          "label": "publishedDate",
+          "label": "releaseDate",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "description",
           "placeholder": ""
         }
       },
       "title": {
-        "type": "Text",
+        "type": "StructuredText",
         "config": {
           "label": "title",
-          "placeholder": ""
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "paragraph": {
-        "type": "Text",
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
         "config": {
-          "label": "paragraph",
-          "placeholder": ""
-        }
-      },
-      "image": {
-        "type": "Image",
-        "config": {
-          "label": "image",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "postdescription": {
-        "type": "Text",
-        "config": {
-          "label": "postDescription",
-          "placeholder": ""
+          "choices": {
+            "text_image": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     }

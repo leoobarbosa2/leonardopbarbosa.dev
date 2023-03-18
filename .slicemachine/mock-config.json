@@ -1,5 +1,13 @@
 {
   "_cts": {
     "blogpost": {}
+  },
+  ".slicemachine": {
+    "TextImage": {},
+    "DynamicContent": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }

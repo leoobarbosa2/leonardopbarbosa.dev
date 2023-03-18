@@ -1,5 +1,7 @@
 import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
+import fetch from 'node-fetch'
+
 import sm from "./sm.json";
 
 /**
@@ -14,6 +16,10 @@ const routes = [
     type: "blogpost",
     path: "/posts",
   },
+  {
+    type: 'blogpost',
+    path: '/post/:uid'
+  }
 ];
 
 /**
@@ -25,6 +31,8 @@ const routes = [
 export const prismicClient = (
   config = {
     accessToken: process.env.PRISMIC_API_KEY,
+    fetch: fetch,
+    previewData: true
   }
 ) => {
   const client = prismic.createClient(sm.apiEndpoint, {

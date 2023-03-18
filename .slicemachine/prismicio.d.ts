@@ -9,61 +9,55 @@ type Simplify<T> = {
 /** Content for blogpost documents */
 interface BlogpostDocumentData {
     /**
-     * publishedDate field in *blogpost*
+     * releaseDate field in *blogpost*
      *
      * - **Field Type**: Date
      * - **Placeholder**: *None*
-     * - **API ID Path**: blogpost.publisheddate
+     * - **API ID Path**: blogpost.publishedDate
      * - **Tab**: Publication
      * - **Documentation**: https://prismic.io/docs/core-concepts/date
      *
      */
-    publisheddate: prismicT.DateField;
+    publishedDate: prismicT.DateField;
+    /**
+     * description field in *blogpost*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: blogpost.description
+     * - **Tab**: Publication
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    description: prismicT.KeyTextField;
     /**
      * title field in *blogpost*
      *
-     * - **Field Type**: Text
+     * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
      * - **API ID Path**: blogpost.title
      * - **Tab**: Publication
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    title: prismicT.KeyTextField;
+    title: prismicT.RichTextField;
     /**
-     * paragraph field in *blogpost*
+     * Slice Zone field in *blogpost*
      *
-     * - **Field Type**: Text
+     * - **Field Type**: Slice Zone
      * - **Placeholder**: *None*
-     * - **API ID Path**: blogpost.paragraph
+     * - **API ID Path**: blogpost.slices[]
      * - **Tab**: Publication
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
      *
      */
-    paragraph: prismicT.KeyTextField;
-    /**
-     * image field in *blogpost*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: blogpost.image
-     * - **Tab**: Publication
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    image: prismicT.ImageField<never>;
-    /**
-     * postDescription field in *blogpost*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: blogpost.postdescription
-     * - **Tab**: Publication
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    postdescription: prismicT.KeyTextField;
+    slices: prismicT.SliceZone<BlogpostDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *blogpost → Slice Zone*
+ *
+ */
+type BlogpostDocumentDataSlicesSlice = TextImageSlice;
 /**
  * blogpost document from Prismic
  *
@@ -75,11 +69,50 @@ interface BlogpostDocumentData {
  */
 export type BlogpostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BlogpostDocumentData>, "blogpost", Lang>;
 export type AllDocumentTypes = BlogpostDocument;
+/**
+ * Primary content in DynamicContent → Primary
+ *
+ */
+interface TextImageSliceDefaultPrimary {
+    /**
+     * content field in *DynamicContent → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: text_image.primary.content
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+}
+/**
+ * Default variation for DynamicContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `TextImage`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextImageSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextImageSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *DynamicContent*
+ *
+ */
+type TextImageSliceVariation = TextImageSliceDefault;
+/**
+ * DynamicContent Shared Slice
+ *
+ * - **API ID**: `text_image`
+ * - **Description**: `TextImage`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextImageSlice = prismicT.SharedSlice<"text_image", TextImageSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogpostDocumentData, BlogpostDocument, AllDocumentTypes };
+        export type { BlogpostDocumentData, BlogpostDocumentDataSlicesSlice, BlogpostDocument, AllDocumentTypes, TextImageSliceDefaultPrimary, TextImageSliceDefault, TextImageSliceVariation, TextImageSlice };
     }
 }
