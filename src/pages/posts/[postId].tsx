@@ -2,23 +2,33 @@ import * as prismicH from "@prismicio/helpers";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { prismicClient } from "../../../prismicio";
 import { Content } from "@prismicio/client";
+import { Article, PostsContainer } from "../../styles/posts/styles";
+import { useRouter } from "next/router";
 
 interface PostProps {
   post: Content.BlogpostDocument
 }
 
-const Post = ({ post }: PostProps) => {
-  console.log(post)
+export default function Post({ post }: PostProps){
+
+  const { isFallback } = useRouter();
+
+  if(isFallback) {
+    <p>Buscando novo post...</p>
+  }
+
+  //TO-DO: Show any UI informing that has no data to show
+  if(!post) return null;
+
   return (
-    <div>
+    <PostsContainer>
       {post.data.slices.map(slice => (
-        <article 
+        <Article 
           key={slice.id} 
           dangerouslySetInnerHTML={{__html: prismicH.asHTML(slice.primary.content)}}
         />
       ))}
-      post
-    </div>
+    </PostsContainer>
   )
 };
 
@@ -34,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }))
 
   return {
-    fallback: false,
+    fallback: true,
     paths: paths
   }
 }
@@ -51,6 +61,3 @@ export const getStaticProps: GetStaticProps = async({ params }) => {
     }
   }
 }
- 
-export default Post;
-

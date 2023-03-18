@@ -1,31 +1,63 @@
-import Link from 'next/link'
 import * as prismicH from "@prismicio/helpers";
-import { GetServerSideProps } from "next";
+import {GetStaticProps } from "next";
 import { prismicClient, } from "../../../prismicio";
 import { Content } from '@prismicio/client'
+import { Card } from '@/components/Card';
+import { FileX  } from 'phosphor-react'
 
-interface PostsPageProps {
-  posts: Content.BlogpostDocument[]
+import { NotFoundContainer, PostsContainer } from "../../styles/posts/styles";
+
+type Post = {
+  title: string;
+  description: string;
+  publishedDate: string;
+  uuid: string;
 }
 
-export default function Posts({ posts }: PostsPageProps) {
+interface PostProps {
+  posts: Post[]
+}
+
+export default function Posts({ posts }: PostProps) {
+  const hasPosts = posts.length > 0;
+
+  if(!hasPosts) {
+    return (
+      <NotFoundContainer>
+        <FileX size={100} />
+        <h1>Nenhum conteúdo encontrado</h1>
+        <p>Não conseguimos retornar ou não existe nenhum post no momento</p>
+      </NotFoundContainer>
+    )
+  }
 
   return (
-    <div>
-      {posts.map(post => (
-        <div key={post.uid}>
-          <Link href={`/posts/${post.uid}`}>
-            {prismicH.asText(post.data.title)}
-          </Link>
-        </div>
-      ))}
-    </div>
+      <PostsContainer>
+        {posts.map(post => (
+            <Card 
+              key={post.uuid}
+              title={post.title}
+              description={post.description}
+              publishedDate={post.publishedDate}
+              linkTo={`/posts/${post.uuid}`}
+            />
+        ))}
+      </PostsContainer>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const client = prismicClient();
-  const posts: Content.BlogpostDocument[]  = await client.getAllByType("blogpost");
+  const response: Content.BlogpostDocument[]  = await client.getAllByType("blogpost");
+
+  const posts = response.map(post => {
+    return {
+      title: prismicH.asText(post.data.title),
+      description: post.data.description,
+      publishedDate: post.data.publishedDate,
+      uuid: post.uid
+    }
+  })
 
   return {
     props: {
