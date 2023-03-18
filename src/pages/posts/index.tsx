@@ -1,27 +1,35 @@
-import { GetStaticProps } from "next";
-import { prismicClient } from "../../../prismicio";
+import Link from 'next/link'
+import * as prismicH from "@prismicio/helpers";
+import { GetServerSideProps } from "next";
+import { prismicClient, } from "../../../prismicio";
+import { Content } from '@prismicio/client'
 
-export default function PostsPage({ page }: any) {
-  return (
-    <div>
-      {page.map((item: any) => (
-        <>
-          <h1>{item.data.uuid}</h1>
-          <h2>{item.data.title}</h2>
-          <p>{item.data.paragraph}</p>
-        </>
-      ))}
-    </div>
-  );
+interface PostsPageProps {
+  posts: Content.BlogpostDocument[]
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export default function Posts({ posts }: PostsPageProps) {
+
+  return (
+    <div>
+      {posts.map(post => (
+        <div key={post.uid}>
+          <Link href={`/posts/${post.uid}`}>
+            {prismicH.asText(post.data.title)}
+          </Link>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
   const client = prismicClient();
-  const page = await client.getAllByType("blogpost");
+  const posts: Content.BlogpostDocument[]  = await client.getAllByType("blogpost");
 
   return {
     props: {
-      page,
+      posts,
     },
   };
 };
