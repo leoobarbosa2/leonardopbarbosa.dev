@@ -1,0 +1,47 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "although"
+  },
+  "publisheddate": {
+    "__TYPE__": "FieldContent",
+    "type": "Date",
+    "value": "2022-01-04"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "height",
+    "type": "Text"
+  },
+  "paragraph": {
+    "__TYPE__": "FieldContent",
+    "value": "clean",
+    "type": "Text"
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+      "width": 3168,
+      "height": 4752
+    },
+    "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+    "width": 3168,
+    "height": 4752,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "postdescription": {
+    "__TYPE__": "FieldContent",
+    "value": "dirty",
+    "type": "Text"
+  }
+}
