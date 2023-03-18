@@ -1,3 +1,4 @@
+import { defaultTheme } from "@/styles/default";
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
