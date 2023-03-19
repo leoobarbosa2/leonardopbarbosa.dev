@@ -5,8 +5,9 @@ import { GetStaticProps } from 'next'
 import { FileX } from 'phosphor-react'
 import { prismicClient } from '../../../prismicio'
 
-import { SEOContainer } from '@/templates/seo'
 import { NotFoundContainer, PostsContainer } from '../../styles/posts/styles'
+import { NextSeo } from 'next-seo'
+import { POSTS_SEO_BASE_DATA } from '@/static/home'
 
 type Post = {
   title: string
@@ -33,10 +34,8 @@ export default function Posts({ posts }: PostProps) {
   }
 
   return (
-    <SEOContainer
-      title="Posts | Leonardo Barbosa: Desenvolvedor front end"
-      description="Alguns posts sobre tecnologias, desenvolvimento web e experiencias na área de desenvolvimento que envolvem front-end"
-    >
+    <>
+      <NextSeo {...POSTS_SEO_BASE_DATA} />
       <PostsContainer>
         {posts.map((post) => (
           <Card
@@ -48,7 +47,7 @@ export default function Posts({ posts }: PostProps) {
           />
         ))}
       </PostsContainer>
-    </SEOContainer>
+    </>
   )
 }
 

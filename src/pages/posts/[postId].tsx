@@ -4,19 +4,19 @@ import { prismicClient } from '../../../prismicio'
 import { Content } from '@prismicio/client'
 import { Article, PostsContainer } from '../../styles/posts/styles'
 import { useRouter } from 'next/router'
-import { SEOContainer } from '@/templates/seo'
+import { ArticleJsonLd, NextSeo } from 'next-seo'
 
 interface PostProps {
   post: Content.BlogpostDocument
 }
 
 export default function Post({ post }: PostProps) {
+  const { isFallback } = useRouter()
   const pageTitle = `${prismicH.asText(
     post?.data?.title
   )}| Leonardo Barbosa: Desenvolvedor frontend.`
   const pageDescription =
     post?.data?.description || 'Conteúdo de texto não encontrado'
-  const { isFallback } = useRouter()
 
   //TO-DO Show loading component
   if (isFallback) {
@@ -27,12 +27,13 @@ export default function Post({ post }: PostProps) {
   if (!post) return null
 
   return (
-    <SEOContainer
-      title={
-        post ? pageTitle : 'Post | Leonardo Barbosa: Desenvolvedor frontend'
-      }
-      description={pageDescription}
-    >
+    <>
+      <NextSeo
+        title={
+          post ? pageTitle : 'Post | Leonardo Barbosa: Desenvolvedor frontend'
+        }
+        description={pageDescription}
+      />
       <PostsContainer>
         {post.data.slices.map((slice) => (
           <Article
@@ -42,8 +43,16 @@ export default function Post({ post }: PostProps) {
             }}
           />
         ))}
+        <ArticleJsonLd
+          url={`https://leonardopbarbosa/post/${post.uid}`}
+          title={pageTitle}
+          datePublished={post.first_publication_date}
+          description={pageDescription}
+          authorName={'Leonardo Barbosa'}
+          images={['']} //TODO
+        />
       </PostsContainer>
-    </SEOContainer>
+    </>
   )
 }
 

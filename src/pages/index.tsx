@@ -1,4 +1,5 @@
-import { SEOContainer } from '@/templates/seo'
+import { HOME_SEO_BASE_DATA } from '@/static/home'
+import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import { BookOpen } from 'phosphor-react'
 import {
@@ -13,10 +14,8 @@ import {
 
 export default function Index() {
   return (
-    <SEOContainer
-      title="Home | Leonardo Barbosa: Desenvolvedor front end"
-      description="Blog pessoal criado para me conectar com outros desenvolvedores e compartilhar conhecimento, verifique as postagens na aba blog."
-    >
+    <>
+      <NextSeo {...HOME_SEO_BASE_DATA} />
       <IndexContainer>
         <article>
           <Image
@@ -62,6 +61,6 @@ export default function Index() {
           </ReadArticlesButton>
         </article>
       </IndexContainer>
-    </SEOContainer>
+    </>
   )
 }
