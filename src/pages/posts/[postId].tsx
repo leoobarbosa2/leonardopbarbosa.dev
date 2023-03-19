@@ -69,6 +69,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const client = prismicClient()
   const post = await client.getByUID('blogpost', postId)
 
+  //TO-DO: Handle post not found
+
   return {
     props: {
       post,
