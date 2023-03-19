@@ -5,8 +5,8 @@ const nextConfig = {
     domains: ['github.com', 'avatars.githubusercontent.com'],
   },
   compiler: {
-    styledComponents: true
-  }
+    styledComponents: true,
+  },
 }
 
 module.exports = nextConfig

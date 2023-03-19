@@ -1,21 +1,19 @@
-import { Footer } from "@/components/Footer"
-import { Header } from "@/components/Header"
-import { ReactNode } from "react"
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
+import { ReactNode } from 'react'
 
-import { Container } from "./styles"
+import { Container } from './styles'
 
 interface DefaultLayoutProps {
-    children: ReactNode
+  children: ReactNode
 }
 
 export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
-    return (
-        <>
-         <Header />
-            <Container>
-                {children}
-            </Container>
-            <Footer />
-        </>  
-    )
+  return (
+    <>
+      <Header />
+      <Container>{children}</Container>
+      <Footer />
+    </>
+  )
 }

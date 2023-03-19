@@ -1,18 +1,18 @@
-import * as prismicH from "@prismicio/helpers";
-import {GetStaticProps } from "next";
-import { prismicClient, } from "../../../prismicio";
+import { Card } from '@/components/Card'
 import { Content } from '@prismicio/client'
-import { Card } from '@/components/Card';
-import { FileX  } from 'phosphor-react'
+import * as prismicH from '@prismicio/helpers'
+import { GetStaticProps } from 'next'
+import { FileX } from 'phosphor-react'
+import { prismicClient } from '../../../prismicio'
 
-import { NotFoundContainer, PostsContainer } from "../../styles/posts/styles";
-import { SEOContainer } from "@/templates/seo";
+import { SEOContainer } from '@/templates/seo'
+import { NotFoundContainer, PostsContainer } from '../../styles/posts/styles'
 
 type Post = {
-  title: string;
-  description: string;
-  publishedDate: string;
-  uuid: string;
+  title: string
+  description: string
+  publishedDate: string
+  uuid: string
 }
 
 interface PostProps {
@@ -20,9 +20,9 @@ interface PostProps {
 }
 
 export default function Posts({ posts }: PostProps) {
-  const hasPosts = posts.length > 0;
+  const hasPosts = posts.length > 0
 
-  if(!hasPosts) {
+  if (!hasPosts) {
     return (
       <NotFoundContainer>
         <FileX size={100} />
@@ -38,14 +38,14 @@ export default function Posts({ posts }: PostProps) {
       description="Alguns posts sobre tecnologias, desenvolvimento web e experiencias na área de desenvolvimento que envolvem front-end"
     >
       <PostsContainer>
-        {posts.map(post => (
-            <Card 
-              key={post.uuid}
-              title={post.title}
-              description={post.description}
-              publishedDate={post.publishedDate}
-              linkTo={`/posts/${post.uuid}`}
-            />
+        {posts.map((post) => (
+          <Card
+            key={post.uuid}
+            title={post.title}
+            description={post.description}
+            publishedDate={post.publishedDate}
+            linkTo={`/posts/${post.uuid}`}
+          />
         ))}
       </PostsContainer>
     </SEOContainer>
@@ -53,15 +53,17 @@ export default function Posts({ posts }: PostProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const client = prismicClient();
-  const response: Content.BlogpostDocument[]  = await client.getAllByType("blogpost");
+  const client = prismicClient()
+  const response: Content.BlogpostDocument[] = await client.getAllByType(
+    'blogpost'
+  )
 
-  const posts = response.map(post => {
+  const posts = response.map((post) => {
     return {
       title: prismicH.asText(post.data.title),
       description: post.data.description,
       publishedDate: post.data.publishedDate,
-      uuid: post.uid
+      uuid: post.uid,
     }
   })
 
@@ -69,6 +71,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts,
     },
-    revalidate: 60 * 60 * 12 // 12 hours
-  };
-};
+    revalidate: 60 * 60 * 12, // 12 hours
+  }
+}

@@ -1,15 +1,15 @@
-import Link from 'next/link'
-import Head from 'next/head'
 import { PrismicProvider } from '@prismicio/react'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import Link from 'next/link'
 
-import { PrismicPreview } from '@prismicio/next'
-import { repositoryName } from '../../prismicio'
-import { Roboto } from 'next/font/google'
-import { GlobalStyle } from '@/styles/global'
 import { defaultTheme } from '@/styles/default'
-import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from '@/styles/global'
 import { DefaultLayout } from '@/templates/default'
+import { PrismicPreview } from '@prismicio/next'
+import { Roboto } from 'next/font/google'
+import { ThemeProvider } from 'styled-components'
+import { repositoryName } from '../../prismicio'
 
 const roboto = Roboto({
   subsets: ['latin'],
