@@ -5,9 +5,16 @@ export const HOME_SEO_BASE_DATA: NextSeoProps = {
   description:
     'Blog pessoal criado para me conectar com outros desenvolvedores e compartilhar conhecimento, verifique as postagens na aba blog e acesse as redes sociais através dos links.',
   openGraph: {
-    url: 'https://github.com/leoobarbosa2.png',
+    images: [
+      {
+        url: 'https://github.com/leoobarbosa2.png',
+        alt: 'Minha foto de perfil',
+        type: 'image/png',
+      },
+    ],
+    siteName: 'lpb.dev',
+    url: 'https://leonardopbarbosa.dev/',
   },
-  canonical: process.env.APP_BASE_URL,
 }
 
 export const POSTS_SEO_BASE_DATA: NextSeoProps = {
