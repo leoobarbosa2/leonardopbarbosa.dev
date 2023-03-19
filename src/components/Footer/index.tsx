@@ -22,7 +22,7 @@ export const Footer = () => {
             <FooterLinkList>
                 {FOOTER_LINKS.map(link => (
                     <li key={link.name}>
-                        <Link href={link.href}>
+                        <Link target="_blank" href={link.href}>
                             {link.icon()}
                         </Link>
                     </li>
