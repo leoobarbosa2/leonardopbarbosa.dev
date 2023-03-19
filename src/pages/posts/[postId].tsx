@@ -44,7 +44,7 @@ export default function Post({ post }: PostProps) {
           />
         ))}
         <ArticleJsonLd
-          url={`https://leonardopbarbosa/post/${post.uid}`}
+          url={`https://leonardopbarbosa/posts/${post.uid}`}
           title={pageTitle}
           datePublished={post.first_publication_date}
           dateModified={post.last_publication_date}
