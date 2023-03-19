@@ -1,5 +1,8 @@
 import { NextSeoProps } from 'next-seo'
 
+export const DEFAULT_OG_IMAGE_URL =
+  'https://leonardopbarbosa.dev/home-og-image.png'
+
 export const HOME_SEO_BASE_DATA: NextSeoProps = {
   title: 'Home | Leonardo Barbosa: Desenvolvedor front end',
   description:
@@ -7,11 +10,9 @@ export const HOME_SEO_BASE_DATA: NextSeoProps = {
   openGraph: {
     images: [
       {
-        url: 'https://github.com/leoobarbosa2.png',
-        alt: 'Minha foto de perfil',
+        url: DEFAULT_OG_IMAGE_URL,
+        alt: 'Logo do site leonardopbarbosa.dev',
         type: 'image/png',
-        height: 40,
-        width: 40,
       },
     ],
     siteName: 'lpb.dev',

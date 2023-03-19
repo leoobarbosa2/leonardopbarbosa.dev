@@ -42,6 +42,17 @@ interface BlogpostDocumentData {
      */
     title: prismicT.RichTextField;
     /**
+     * ogImage field in *blogpost*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: blogpost.ogImage
+     * - **Tab**: Publication
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    ogImage: prismicT.ImageField<never>;
+    /**
      * Slice Zone field in *blogpost*
      *
      * - **Field Type**: Slice Zone

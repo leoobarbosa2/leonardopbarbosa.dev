@@ -5,6 +5,7 @@ import { Content } from '@prismicio/client'
 import { Article, PostsContainer } from '../../styles/posts/styles'
 import { useRouter } from 'next/router'
 import { ArticleJsonLd, NextSeo } from 'next-seo'
+import { DEFAULT_OG_IMAGE_URL } from '@/static/home'
 
 interface PostProps {
   post: Content.BlogpostDocument
@@ -17,6 +18,7 @@ export default function Post({ post }: PostProps) {
   )}| Leonardo Barbosa: Desenvolvedor frontend.`
   const pageDescription =
     post?.data?.description || 'Conteúdo de texto não encontrado'
+  const ogImageUrl = post?.data?.ogImage?.url || DEFAULT_OG_IMAGE_URL
 
   //TO-DO Show loading component
   if (isFallback) {
@@ -33,6 +35,15 @@ export default function Post({ post }: PostProps) {
           post ? pageTitle : 'Post | Leonardo Barbosa: Desenvolvedor frontend'
         }
         description={pageDescription}
+        openGraph={{
+          title: pageTitle,
+          description: pageDescription,
+          images: [
+            {
+              url: ogImageUrl,
+            },
+          ],
+        }}
       />
       <PostsContainer>
         {post.data.slices.map((slice) => (
