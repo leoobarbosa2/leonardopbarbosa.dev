@@ -25,7 +25,6 @@ export default function Post({ post }: PostProps) {
     ;<p>Buscando novo post...</p>
   }
 
-  //TO-DO: Show any UI informing that has no data to show
   if (!post) return null
 
   return (
@@ -93,15 +92,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { postId } = params as { postId: string }
-
   const client = prismicClient()
-  const post = await client.getByUID('blogpost', postId)
 
-  //TO-DO: Handle post not found
-
-  return {
-    props: {
-      post,
-    },
+  try {
+    const post = await client.getByUID('blogpost', postId)
+    return {
+      props: {
+        post,
+      },
+    }
+  } catch (e) {
+    return {
+      notFound: true,
+    }
   }
 }
