@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer"
 import { Header } from "@/components/Header"
 import { ReactNode } from "react"
 
@@ -14,6 +15,7 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
             <Container>
                 {children}
             </Container>
+            <Footer />
         </>  
     )
 }
