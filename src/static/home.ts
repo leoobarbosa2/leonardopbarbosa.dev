@@ -6,7 +6,7 @@ export const DEFAULT_OG_IMAGE_URL =
 export const HOME_SEO_BASE_DATA: NextSeoProps = {
   title: 'Home | Leonardo Barbosa: Desenvolvedor front end',
   description:
-    'Blog pessoal criado para me conectar com outros desenvolvedores e compartilhar conhecimento, verifique as postagens na aba blog e acesse as redes sociais através dos links.',
+    'Site pessoal criado para me conectar com outros desenvolvedores e compartilhar conhecimento, verifique as postagens na aba blog e acesse as redes sociais através dos links.',
   openGraph: {
     images: [
       {
