@@ -24,9 +24,6 @@ export const CardContainer = styled.div`
   min-height: 160px;
   padding: 1.25rem 0;
   border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
-
-  &:last-child {
-  }
 `
 
 export const CardPublishedDate = styled.span`
