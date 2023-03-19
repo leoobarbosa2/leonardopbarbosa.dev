@@ -11,8 +11,8 @@ interface PostProps {
 }
 
 export default function Post({ post }: PostProps){
-  const pageTitle = `${prismicH.asText(post.data.title)}| Leonardo Barbosa: Desenvolvedor frontend.`
-  const pageDescription = post.data.description || 'Conteúdo de texto não encontrado';
+  const pageTitle = `${prismicH.asText(post?.data?.title)}| Leonardo Barbosa: Desenvolvedor frontend.`
+  const pageDescription = post?.data?.description || 'Conteúdo de texto não encontrado';
   const { isFallback } = useRouter();
 
   //TO-DO Show loading component
