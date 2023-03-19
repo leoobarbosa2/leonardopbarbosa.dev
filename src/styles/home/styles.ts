@@ -21,7 +21,7 @@ export const GreetingsMessage = styled.span`
   font-size: 5rem;
 
   @media (max-width: 600px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   span {
