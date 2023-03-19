@@ -6,6 +6,7 @@ export const defaultTheme = {
     light: '#DCD7C9',
     'gray-light': '#E1E1E6',
     'text-dark': '#29292E',
+    'soft-white': 'rgba(255,255,255,0.9)',
     white: '#FFF',
   },
 }
