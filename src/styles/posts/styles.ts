@@ -13,8 +13,9 @@ export const NotFoundContainer = styled.div`
 
 export const Article = styled.article`
   h1 {
+    text-align: justify;
     color: ${({ theme }) => theme.colors.primary};
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 2.5rem;
 
     @media (max-width: 600px) {
