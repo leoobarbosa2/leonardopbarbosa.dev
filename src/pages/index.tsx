@@ -1,8 +1,13 @@
+import { SEOContainer } from '@/templates/seo';
 import Image from 'next/image';
 import { DateText, Description, GreetingsMessage, IndexContainer, ReadArticlesButton, Role, RoleContainer } from '../styles/home/styles';
 
 export default function Index() {
   return (
+    <SEOContainer 
+      title='Home | Leonardo Barbosa: Desenvolvedor front end'
+      description='Blog pessoal criado para me conectar com outros desenvolvedores e compartilhar conhecimento, verifique as postagens na aba blog.'
+    >
     <IndexContainer>
       <article>
       <Image 
@@ -34,5 +39,6 @@ export default function Index() {
         <ReadArticlesButton href="/posts">Ler posts</ReadArticlesButton>
       </article>
     </IndexContainer>
+    </SEOContainer>
   )
 }

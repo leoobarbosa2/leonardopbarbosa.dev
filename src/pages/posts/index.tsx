@@ -6,6 +6,7 @@ import { Card } from '@/components/Card';
 import { FileX  } from 'phosphor-react'
 
 import { NotFoundContainer, PostsContainer } from "../../styles/posts/styles";
+import { SEOContainer } from "@/templates/seo";
 
 type Post = {
   title: string;
@@ -32,6 +33,10 @@ export default function Posts({ posts }: PostProps) {
   }
 
   return (
+    <SEOContainer
+      title="Posts | Leonardo Barbosa: Desenvolvedor front end"
+      description="Alguns posts sobre tecnologias, desenvolvimento web e experiencias na área de desenvolvimento que envolvem front-end"
+    >
       <PostsContainer>
         {posts.map(post => (
             <Card 
@@ -43,6 +48,7 @@ export default function Posts({ posts }: PostProps) {
             />
         ))}
       </PostsContainer>
+    </SEOContainer>
   )
 }
 
