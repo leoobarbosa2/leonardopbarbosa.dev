@@ -19,8 +19,11 @@ This website was created to connect with people and to share knowledge.
 
 | Home | Posts | Post/:uid |
 |------|-------|-----------|
-|![Captura de Tela 2023-03-19 às 09 20 29](https://user-images.githubusercontent.com/54908803/226175170-f7bc9186-1c24-495e-ab62-19e6c2716149.png)|![Captura de Tela 2023-03-19 às 09 29 40](https://user-images.githubusercontent.com/54908803/226175231-a22bb7d2-7b0b-4f2d-a75e-8dca0a4f000f.png)|![Captura de Tela 2023-03-19 às 09 31 17](https://user-images.githubusercontent.com/54908803/226175344-1d70ab62-d4d2-4503-9956-5517d704966e.png)|
+|![Captura de Tela 2023-03-19 às 11 08 27](https://user-images.githubusercontent.com/54908803/226181790-aac6d6cf-9333-4afb-a7a6-bf76ff35cc79.png)| ![Captura de Tela 2023-03-19 às 11 08 38](https://user-images.githubusercontent.com/54908803/226181893-ae04c8ef-84dc-4790-908e-91923792b796.png)|![Captura de Tela 2023-03-19 às 11 08 52](https://user-images.githubusercontent.com/54908803/226181851-dccd3096-6dfd-4772-9e7e-62c2385992ba.png)|
+
+
 
 #### Gif
 
-![blogPage](https://user-images.githubusercontent.com/54908803/226175383-e1588bc5-d2c7-4def-a969-c95dbf265aac.gif)
+![blog](https://user-images.githubusercontent.com/54908803/226181919-47e6e433-6e34-4be6-a638-6d9f55b9c032.gif)
+
