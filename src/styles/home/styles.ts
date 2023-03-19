@@ -6,7 +6,7 @@ export const IndexContainer = styled.div`
         display: block;
         margin: 0 auto;
         border-radius: 50%;
-        outline: 4px solid ${({ theme } ) => theme.colors.secondary};
+        border: 4px solid ${({ theme } ) => theme.colors.secondary};
 
         @media(max-width: 600px) {
             width: 200px;
@@ -59,13 +59,20 @@ export const Description = styled.p`
     line-height: 1.6;
     text-align: justify;
     color: ${({ theme } ) => theme.colors["text-dark"]};
+
+    a {
+        color: ${({ theme } ) => theme.colors.secondary};
+    }
 `
 
 export const ReadArticlesButton = styled(Link)`
-   display: block;
+   max-width: 120px;
+   display: flex;
    margin-top: 1.25rem;
+   margin: 1.25rem auto 0 auto;
    font-size: 1.25rem;
    text-decoration: underline;
    color: ${({ theme } ) => theme.colors.secondary};
-   text-align: center;
+   gap: 0.5rem;
+   text-decoration: none;
 `;

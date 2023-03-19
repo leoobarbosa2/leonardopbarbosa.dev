@@ -1,5 +1,6 @@
 import { SEOContainer } from '@/templates/seo';
 import Image from 'next/image';
+import { BookOpen } from 'phosphor-react';
 import { DateText, Description, GreetingsMessage, IndexContainer, ReadArticlesButton, Role, RoleContainer } from '../styles/home/styles';
 
 export default function Index() {
@@ -24,7 +25,7 @@ export default function Index() {
         </GreetingsMessage> 
         <RoleContainer>
           <Role>Desenvolvedor front-end</Role>
-          <DateText>desde 2020</DateText>
+          <DateText>3 anos +</DateText>
         </RoleContainer>
 
         <Description>
@@ -32,11 +33,20 @@ export default function Index() {
           de lá pra cá participei em vários projetos front sempre utilizando Javascript e Typescript e muita
           coisa que o universo do React tem a oferecer. <br/>
           Criei esse projeto pra facilitar o contato com as pessoas, mas principalmente com o intuito de compartilhar 
-          conhecimento com o passar do tempo. Separei uma aba de posts exclusiva pros conteúdos e pretendo atualizá-los
-          quando possivel :)
+          conhecimento com o passar do tempo. Separei uma aba de blog exclusiva para conteúdo e pretendo atualizá-los
+          quando possivel
         </Description>
+        <div>
+        <Description>
+           Encontre o projeto do github <a href='https://github.com/leoobarbosa2/leonardopbarbosa.dev' target="_blank">aqui</a>
+        </Description>
+        
+        </div>
 
-        <ReadArticlesButton href="/posts">Ler posts</ReadArticlesButton>
+        <ReadArticlesButton href="/posts">
+          Ler posts
+          <BookOpen size={24}/>
+        </ReadArticlesButton>
       </article>
     </IndexContainer>
     </SEOContainer>
