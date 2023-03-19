@@ -1,4 +1,4 @@
-import { Footer } from '@/components/Footer'
+import { SocialLinks } from '@/components/SocialLinks'
 import { Header } from '@/components/Header'
 import { ReactNode } from 'react'
 
@@ -13,7 +13,7 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
     <>
       <Header />
       <Container>{children}</Container>
-      <Footer />
+      <SocialLinks />
     </>
   )
 }

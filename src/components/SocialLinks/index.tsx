@@ -1,24 +1,29 @@
 import Link from 'next/link'
 import { GithubLogo, LinkedinLogo } from 'phosphor-react'
-import { FooterContainer, FooterLinkList } from './styles'
+import {
+  SocialinkList,
+  SocialLinksContainer,
+  CustomGithubIcon,
+  CustomLinkedInIcon,
+} from './styles'
 
 const FOOTER_LINKS = [
   {
     name: 'LinkedIn logo containing link to profile',
     href: 'https://www.linkedin.com/in/leonardobarbosacp',
-    icon: () => <LinkedinLogo color="white" size={32} />,
+    icon: () => <CustomLinkedInIcon size={28} />,
   },
   {
     name: 'Github logo containing link to repository',
     href: 'https://github.com/leoobarbosa2',
-    icon: () => <GithubLogo color="white" size={32} />,
+    icon: () => <CustomGithubIcon size={28} />,
   },
 ]
 
-export const Footer = () => {
+export const SocialLinks = () => {
   return (
-    <FooterContainer>
-      <FooterLinkList>
+    <SocialLinksContainer>
+      <SocialinkList>
         {FOOTER_LINKS.map((link) => (
           <li key={link.name}>
             <Link target="_blank" href={link.href}>
@@ -26,7 +31,7 @@ export const Footer = () => {
             </Link>
           </li>
         ))}
-      </FooterLinkList>
-    </FooterContainer>
+      </SocialinkList>
+    </SocialLinksContainer>
   )
 }

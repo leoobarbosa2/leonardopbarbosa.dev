@@ -24,6 +24,10 @@ export const GreetingsMessage = styled.span`
     font-size: 1.5rem;
   }
 
+  @media (min-width: 600px) and (max-width: 1080px) {
+    font-size: 3rem;
+  }
+
   span {
     margin-left: 0.5rem;
     color: ${({ theme }) => theme.colors.secondary};
