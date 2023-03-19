@@ -47,9 +47,17 @@ export default function Post({ post }: PostProps) {
           url={`https://leonardopbarbosa/post/${post.uid}`}
           title={pageTitle}
           datePublished={post.first_publication_date}
+          dateModified={post.last_publication_date}
           description={pageDescription}
-          authorName={'Leonardo Barbosa'}
-          images={['']} //TODO
+          authorName={[
+            {
+              name: 'Leonardo Barbosa',
+              url: 'https://www.linkedin.com/in/leonardobarbosacp/',
+            },
+          ]}
+          isAccessibleForFree={true}
+          images={['https://github.com/leoobarbosa2.png']} //TODO
+          publisherName={'Leonardo Barbosa'}
         />
       </PostsContainer>
     </>
