@@ -10,6 +10,8 @@ export const HOME_SEO_BASE_DATA: NextSeoProps = {
         url: 'https://github.com/leoobarbosa2.png',
         alt: 'Minha foto de perfil',
         type: 'image/png',
+        height: 40,
+        width: 40,
       },
     ],
     siteName: 'lpb.dev',
