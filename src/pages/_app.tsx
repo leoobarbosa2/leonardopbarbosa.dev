@@ -8,14 +8,9 @@ import { defaultTheme } from '@/styles/default'
 import { GlobalStyle } from '@/styles/global'
 import { DefaultLayout } from '@/templates/default'
 import { PrismicPreview } from '@prismicio/next'
-import { Roboto } from 'next/font/google'
 import { ThemeProvider } from 'styled-components'
 import { repositoryName } from '../../prismicio'
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-})
+import { roboto, robotoMono } from '@/fonts'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -25,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={defaultTheme}>
         <PrismicPreview repositoryName={repositoryName}>
-          <div className={roboto.className}>
+          <div className={`${robotoMono.variable} ${roboto.className}`}>
             <DefaultLayout>
               <Component {...pageProps} />
               <Analytics />

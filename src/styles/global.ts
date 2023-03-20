@@ -16,8 +16,13 @@ export const GlobalStyle = createGlobalStyle`
         color: ${({ theme }) => theme.colors['text-dark']};
         -webkit-font-smoothing: antialiased;
     }
-    
-    body, input, textarea, button {
-        font-size: 1rem;
+
+    p {
+        font-family: var(--roboto-mono);
+
+        &::selection {
+          color: ${({ theme }) => theme.colors.white};
+          background: ${({ theme }) => theme.colors.secondary};
+        }
     }
 `
