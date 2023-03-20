@@ -5,8 +5,9 @@ import {
   CardTitle,
   LinkContainer,
 } from './styles'
-import { formatDistanceToNow } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import { utcToZonedTime } from 'date-fns-tz'
 
 interface CardProps {
   title: string
@@ -21,9 +22,10 @@ export const Card = ({
   publishedDate,
   linkTo,
 }: CardProps) => {
-  const formattedDate = formatDistanceToNow(new Date(publishedDate), {
+  const date = parseISO(publishedDate)
+  const dateBr = utcToZonedTime(date, 'America/Sao_Paulo')
+  const formattedDate = format(dateBr, "dd'/'MM'/'yyyy", {
     locale: ptBR,
-    addSuffix: true,
   })
 
   return (
