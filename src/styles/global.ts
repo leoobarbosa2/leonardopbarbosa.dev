@@ -25,4 +25,11 @@ export const GlobalStyle = createGlobalStyle`
           background: ${({ theme }) => theme.colors.secondary};
         }
     }
+
+    a {
+        &::selection {
+          color: ${({ theme }) => theme.colors.white};
+          background: ${({ theme }) => theme.colors.secondary};
+        }
+    }
 `
