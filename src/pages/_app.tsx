@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import { Analytics } from '@vercel/analytics/react'
 import { defaultTheme } from '@/styles/default'
 import { GlobalStyle } from '@/styles/global'
 import { DefaultLayout } from '@/templates/default'
@@ -27,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <div className={roboto.className}>
             <DefaultLayout>
               <Component {...pageProps} />
+              <Analytics />
             </DefaultLayout>
           </div>
         </PrismicPreview>
