@@ -25,7 +25,7 @@ const getBlogPages = async () => {
   const response = await client.getAllByType('blogpost')
 
   const blogPagesId = response.map((page) => ({
-    url: `${baseURL}/${page.uid}`,
+    url: `${baseURL}/posts/${page.uid}`,
     lastModifiedDate: page.last_publication_date,
   }))
 
