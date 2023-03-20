@@ -17,7 +17,7 @@
             "label": "content",
             "placeholder": "This is where it all begins...",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,hyperlink,image,embed"
+            "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,hyperlink,image,embed,list-item,o-list-item,rtl,em"
           }
         }
       },
