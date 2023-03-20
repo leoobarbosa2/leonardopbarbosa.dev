@@ -18,6 +18,7 @@ export const HOME_SEO_BASE_DATA: NextSeoProps = {
     siteName: 'lpb.dev',
     url: 'https://leonardopbarbosa.dev/',
   },
+  canonical: 'https://leonardopbarbosa.dev/',
 }
 
 export const POSTS_SEO_BASE_DATA: NextSeoProps = {
@@ -25,5 +26,5 @@ export const POSTS_SEO_BASE_DATA: NextSeoProps = {
   description:
     'Posts sobre tecnologias, desenvolvimento web e experiencias na área de desenvolvimento que envolvem front-end, javascript, typescript e mais.',
 
-  canonical: `${process.env.APP_BASE_URL}/posts`,
+  canonical: 'https://leonardopbarbosa.dev/posts',
 }
