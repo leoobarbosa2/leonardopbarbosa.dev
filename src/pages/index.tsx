@@ -37,11 +37,10 @@ export default function Index() {
             Olá, me chamo Leonardo Barbosa. Trabalho como desenvolvedor
             front-end desde 2020, de lá pra cá participei em vários projetos
             front sempre utilizando Javascript e Typescript e muita coisa que o
-            universo do React tem a oferecer. <br />
-            Criei esse projeto pra facilitar o contato com as pessoas, mas
-            principalmente com o intuito de compartilhar conhecimento com o
-            passar do tempo. Separei uma aba de blog exclusiva para conteúdo e
-            pretendo atualizá-los quando possivel
+            universo do React tem a oferecer. Criei esse projeto pra facilitar o
+            contato com as pessoas, mas principalmente com o intuito de
+            compartilhar conhecimento com o passar do tempo. Separei uma aba de
+            blog exclusiva para conteúdo e pretendo atualizá-los quando possivel
           </Description>
           <div>
             <Description>
