@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const PostsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0 0 3rem 0;
 `
 
 export const NotFoundContainer = styled.div`
@@ -15,7 +16,7 @@ export const Article = styled.article`
   h1 {
     text-align: justify;
     color: ${({ theme }) => theme.colors.primary};
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 2.5rem;
 
     @media (max-width: 600px) {
@@ -24,13 +25,18 @@ export const Article = styled.article`
   }
 
   p {
-    line-height: 1.6;
+    line-height: 2;
     color: ${({ theme }) => theme.colors['text-dark']};
     margin-top: 1.25rem;
+    text-align: justify;
 
     a {
       color: ${({ theme }) => theme.colors.secondary};
       font-weight: bold;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 1.125rem;
     }
   }
 
@@ -38,9 +44,21 @@ export const Article = styled.article`
   h3 {
     color: ${({ theme }) => theme.colors.primary};
     font-size: 2rem;
+    margin: 2rem 0;
 
     @media (max-width: 600px) {
       font-size: 1.25rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      font-size: 1.25rem;
+      color: ${({ theme }) => theme.colors.secondary};
+      font-weight: bold;
+      margin-top: 1rem;
     }
   }
 
