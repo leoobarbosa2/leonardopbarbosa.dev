@@ -15,7 +15,7 @@ This website was created to connect with people and to share knowledge.
 - [Prismic](https://prismic.io/)
 - It is deployed at [Vercel](https://vercel.com/) in case you are asking yourself
 
-#### Showroom Pages (2023)
+#### Showroom Pages (2023) - First UI version
 
 | Home | Posts | Post/:uid |
 |------|-------|-----------|
