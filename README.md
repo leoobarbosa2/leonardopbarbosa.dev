@@ -25,5 +25,9 @@ This website was created to connect with people and to share knowledge.
 
 #### Gif
 
-![blog](https://user-images.githubusercontent.com/54908803/226181919-47e6e433-6e34-4be6-a638-6d9f55b9c032.gif)
+| Gif |
+| --- |
+|  ![blog](https://user-images.githubusercontent.com/54908803/226181919-47e6e433-6e34-4be6-a638-6d9f55b9c032.gif)  |
+
+
 
