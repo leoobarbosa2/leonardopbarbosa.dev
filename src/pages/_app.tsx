@@ -17,6 +17,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
       <Head>
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2409528349640523"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <ThemeProvider theme={defaultTheme}>
         <PrismicPreview repositoryName={repositoryName}>
