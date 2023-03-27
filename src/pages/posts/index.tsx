@@ -22,7 +22,13 @@ interface PostProps {
 
 export default function Posts({ posts }: PostProps) {
   const hasPosts = posts.length > 0
-
+  const sortedPost = posts
+    .sort(
+      (a, b) =>
+        new Date(a.publishedDate).valueOf() -
+        new Date(b.publishedDate).valueOf()
+    )
+    .reverse()
   if (!hasPosts) {
     return (
       <NotFoundContainer>
@@ -37,7 +43,7 @@ export default function Posts({ posts }: PostProps) {
     <>
       <NextSeo {...POSTS_SEO_BASE_DATA} />
       <PostsContainer>
-        {posts.map((post) => (
+        {sortedPost.map((post) => (
           <Card
             key={post.uuid}
             title={post.title}
